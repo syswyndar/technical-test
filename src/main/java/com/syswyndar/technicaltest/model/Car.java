@@ -5,8 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,13 +16,11 @@ import lombok.Setter;
 public class Car {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "car_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long car_id;
 
     private String car_name;
 
-    @OneToOne
-    @JoinColumn(name = "brand_id")
-    private Brand brand;
+    private Long brand_id;
 }

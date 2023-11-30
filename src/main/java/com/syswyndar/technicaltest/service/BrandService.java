@@ -34,6 +34,8 @@ public class BrandService {
         brands.add(setupBrand("BMW"));
         brands.add(setupBrand("Mercedez Benz"));
         brands.add(setupBrand("Ford"));
+
+        repo.saveAll(brands);
     }
 
     public Brand getBrandById(Long brand_id) {
